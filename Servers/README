@@ -1,0 +1,29 @@
+# Project structure:
+    ## --> Servers: Contains all the necessary files to generate the Servers
+    ## --> Dockerfile: File used to generate the Docker image
+    ## --> dockerFifo: Create the docker image and container
+    ## --> deleteDockerFifo: delete the docker image and container
+
+# Step by Step instructions:
+    ## --> Creating Docker container:
+        ### --> First of all make sure the project is properly constructed, you can make the project with the Makefile contained inside "Servers" directory (sudo make server)
+        ### --> Run bash file named createDocker.sh
+    ## --> Running Daemon
+        ### --> you can use the flag '-i' to go inside the container. If createDocker.sh is complete successfully yo will be inside.
+        ### --> You can also go inside the docker container with the command "sudo docker exec -t -i server<servername> /bin/bash"
+    ## --> Deleting Daemon 
+        ### --> To delete the docker you can use deleteDocker.sh bash file.
+
+# Running OS:
+    ## --> For this test Ubuntu 18.04 were used and tested.
+
+# Changing ports:
+    ## --> Change the config file config.conf
+    ## --> change the createdocker.sh HOSTIP and DOCKERIP for the new ports used.
+
+# Docker exposure:
+    ## --> Docker will be exposed under this url 'http://<hostip>:<server_port>, where hostip is the ip direction of the host and server_port is the diferrent listening port of the server
+
+# Project deploy:
+    ## --> In order to deploy you can execute 'prepareRelease.sh' this will make a .tar.gz file with all the files you will need to deploy the web servers
+    ## --> you can find all the project needs in github: https://github.com/rsolano10/operativos_proyecto1_grupo4.git

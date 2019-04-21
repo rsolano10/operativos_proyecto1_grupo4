@@ -1,0 +1,13 @@
+[Unit]
+Description=Daemon WebServerFork CE4303
+After=network.target syslog.service
+
+[Service]
+User=root
+ExecStart=/etc/webserver/server
+
+[Install]
+WantedBy=graphical.target
+
+
+
